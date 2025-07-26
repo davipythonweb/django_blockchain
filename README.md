@@ -1,5 +1,5 @@
 # django_blockchain
-Cceito de blockchain em lançamentos contabeis com Django Framework
+Conceito de blockchain em lançamentos contabeis com Django Framework
 
 - Tela dos lançamentos
 

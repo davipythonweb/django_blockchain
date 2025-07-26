@@ -1,0 +1,36 @@
+<!-- templates/lista_blocos.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Blockchain Contábil</title>
+    <style>
+        .bloco {
+            border: 1px solid #333;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+        .genesis {
+            background-color: #ddeeff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blockchain Contábil</h1>
+    <a href="{% url 'adiciona_lancamento' %}">Novo Lançamento</a><br><br>
+
+    {% for bloco in blocos %}
+        <div class="bloco {% if forloop.first %}genesis{% endif %}">
+            <strong>Bloco {{ bloco.index }}</strong><br>
+            <strong>Dados:</strong> {{ bloco.dados }}<br>
+            <strong>Hash:</strong> {{ bloco.hash }}<br>
+            <strong>Hash Anterior:</strong> {{ bloco.hash_anterior }}<br>
+            <strong>Nonce:</strong> {{ bloco.nonce }}<br>
+            <strong>Timestamp:</strong> {{ bloco.timestamp }}
+        </div>
+    {% empty %}
+        <p>Nenhum bloco encontrado.</p>
+    {% endfor %}
+</body>
+</html>

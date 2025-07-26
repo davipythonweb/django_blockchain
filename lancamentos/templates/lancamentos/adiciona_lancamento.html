@@ -1,0 +1,27 @@
+<!-- templates/adiciona_lancamento.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Lançamento Contábil</title>
+</head>
+<body>
+    <h1>Novo Lançamento</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="conta">Conta:</label><br>
+        <input type="text" id="conta" name="conta" required><br><br>
+
+        <label for="debito">Débito:</label><br>
+        <input type="number" id="debito" name="debito" step="0.01"><br><br>
+
+        <label for="credito">Crédito:</label><br>
+        <input type="number" id="credito" name="credito" step="0.01"><br><br>
+
+        <button type="submit">Adicionar Lançamento</button>
+    </form>
+
+    <br>
+    <a href="{% url 'lista_blocos' %}">Ver Blocos</a>
+</body>
+</html>
